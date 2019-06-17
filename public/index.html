@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" prefix="og: http://ogp.me/ns#">
+    <head>
+    	<meta charset="utf-8" />
+    	<meta name="Author" content="" />
+    	<meta name="viewport" content="width=1024" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9" />
+    	<meta name="Description" content="" />
+        <link rel="stylesheet" href="css/dropzone.css" type="text/css" />
+    	<link rel="stylesheet" href="css/style.css" type="text/css" />
+    	<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script src="dropzone.js"></script>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    	<title>Get Recipe</title>
+    </head>
+    <body class="home">
+        <header id="header">
+            <div class="logo-wrapper">
+                <div id="logo"></div>
+            </div>
+            <div class="wrapper">
+                <h1>Find everyday cooking inspiration by ingredients</h1>
+                <h3>Drag and drop ingredient images to search recipes</h3>
+            </div>
+        </header>
+        <div id="main">
+            <div id="upload">
+                <!-- Hide or gray out dropzone after search -->
+                <div id="dropzone">
+                    <form action="/file-upload" class="dropzone" id=""></form>
+                    <button id="getRecipe" type="button" class="btn"><strong>Get recipes</strong></button>
+                </div>
+            </div>
+            <div id="result">
+                <div id="recipe">
+                    <div class="recipe-image">
+                        <!-- <img src="images/output.jpg"> -->
+                    </div>
+                    <div class="recipe-texts">
+                        <h3>Look at this delicious dish</h3>
+                        <h4>The recognized ingredients are...</h4>
+                        <!-- <p>grass mammal animal Easter egg chicken food tomato juicy</p> -->
+                    </div>
+                </div>
+                <div id="image-transfer">
+                    <!-- Put image transfer content here -->
+                    <!-- <img src="images/result_1.jpg">
+                    <img src="images/result_1.jpg"> -->
+                </div>
+                <div id="search-results">
+                    <!-- Put search results here -->
+
+
+                </div>
+                <div id="newSearch">
+                    <button type="button" class="btn" onclick="window.location.reload()"><strong>Find new recipes</strong></button>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+
+        </div>
+        <script src="imageTransfer.js"></script>
+        <script>
+        $( "#getRecipe" ).click(function() {
+            $( ".wrapper, #upload" ).slideUp( "slow", function() {
+            // Animation complete.
+            });
+            $( "#result" ).show();
+            $( "#newSearch" ).show();
+        });
+        </script>
+    </body>
+</html>

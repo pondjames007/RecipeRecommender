@@ -25,6 +25,7 @@ Get ingredient keywords from server and go online to scrape the cuisine image on
 #### useownimg.py
 Do PCA and kNN in Caltech256 database. Look for the shortest image path between the ingredient image and the cuisine image.
 
+## Result
 <p align="center">
 	<img src="./readme/flow1.png" width="480">
 	<img src="./readme/flow2.png" width="480">
